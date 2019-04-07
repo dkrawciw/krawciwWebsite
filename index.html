@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>crawdad.com</title>
+    <title></title>
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <style>
       body{
@@ -14,7 +14,13 @@
   </head>
   <body>
     <div>
-      <h1>crouton.com</h1>
+      <h1>krawciw.com</h1>
     </div>
+    <script>
+      var div = document.querySelector("div");
+      var r = ['crouton', 'crawdad', 'cashew', 'groucho'];
+
+      div.innerHTML = '<h1>' + r[Math.floor(Math.random() * r.length)] + '.com</h1>';
+    </script>
   </body>
 </html>
