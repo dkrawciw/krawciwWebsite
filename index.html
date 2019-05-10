@@ -1,26 +1,64 @@
-<!DOCTYPE html>
+<DOCTYPE html>
 <html>
   <head>
-    <title>crowcow.com</title>
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <title>krawciw.com</title>
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
     <style>
       body{
         text-align: center;
-        font-family: 'Roboto', sans-serif;
+        font-family: 'Work Sans', sans-serif;
+        background-color: #0B131E;
+      }
+      #titleDiv{
+        transition: all 0.3s;
         font-size: 50px;
-        margin: 10%;
+        color: white;
+        width: 50%;
+        margin: 5% auto;
+        padding: 3%;
+        border-radius: 20px;
+      }
+      #titleDiv:hover{
+        cursor: pointer;
+        background-color: #142135;
       }
     </style>
   </head>
   <body>
-    <div>
-      <h1>krawciw.com</h1>
+    <div id="titleDiv">
     </div>
-    <script>
-      var div = document.querySelector("div");
-      var r = ['crouton', 'crawdad', 'cashew', 'crayfish'];
+    <script type="text/javascript">
+      var titleDiv = document.querySelector('#titleDiv');
+      var ttl = document.querySelector('title');
+      var ttls = ['crouton','crayfish','crawdad','cashew'];
+      var randomNum = Math.floor(Math.random() * (ttls.length - 1));
+      var colors = ['00A6FB', 'FFBA49', 'FF5E5B', '6E44FF', 'EEE5E9', 'EDF67D', 'E4572E', 'EDBF85'];
 
-      div.innerHTML = '<h1>' + r[Math.floor(Math.random() * r.length)] + '.com</h1>';
+      titleDiv.style.color = '#' + colors[Math.floor(Math.random() * colors.length)];
+      var nums = [];
+      var lostNum = 0;
+
+      for(var x = 0; x < ttls.length; x++){
+        nums.push(x);
+      }
+
+      lostNum = randomNum;
+      nums.splice(randomNum, 1);
+
+      titleDiv.innerHTML = '<h1>' + ttls[randomNum] + '.com</h1>';
+
+      titleDiv.addEventListener('click', function(){
+        randomNum = nums[Math.floor(Math.random() * (ttls.length - 1))];
+
+        titleDiv.innerHTML = '<h1>' + ttls[randomNum] + '.com</h1>';
+        ttl.textContent = ttls[randomNum] + '.com';
+        titleDiv.style.color = '#' + colors[Math.floor(Math.random() * colors.length)];
+        titleDiv.style.borderRadius = Math.floor(Math.random() * 150) + 'px';
+
+        nums.splice(lostNum, 0, lostNum);
+        lostNum = randomNum;
+        nums.splice(randomNum, 1);
+      });
     </script>
   </body>
 </html>
