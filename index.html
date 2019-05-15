@@ -1,6 +1,8 @@
 <DOCTYPE html>
 <html>
   <head>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
+    
     <link rel="icon" type="image/png" href="kLogo.png">
     <title>krawciw.com</title>
     <link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
@@ -49,6 +51,8 @@
       titleDiv.innerHTML = '<h1>' + ttls[randomNum] + '.com</h1>';
 
       titleDiv.addEventListener('click', function(){
+        $('ttl').effect('shake', 100);
+
         randomNum = nums[Math.floor(Math.random() * (ttls.length - 1))];
 
         titleDiv.innerHTML = '<h1>' + ttls[randomNum] + '.com</h1>';
