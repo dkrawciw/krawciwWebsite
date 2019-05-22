@@ -1,0 +1,79 @@
+<DOCTYPE html>
+<html>
+  <head>
+    <title>Destroying Libtards...</title>
+    <style>
+      body{
+        text-align: center;
+        font-family: sans-serif;
+      }
+      button{
+        border: none;
+        padding: 10px;
+        background-color: #B8B8B8;
+        transition: 0.3s;
+        color: white;
+      }
+      button:hover{
+        cursor: pointer;
+        background-color: #3D3D3D;
+        transition: 0.3s;
+      }
+      img{
+        border: 1px solid #3B3B3B;
+        transition: 0.3s;
+      }
+      img:hover{
+        border-radius: 5px;
+        border: 1px solid #FF4242;
+        transition: 0.3s;
+      }
+      div{
+        transition: all 0.3s;
+      }
+    </style>
+  </head>
+  <body>
+    <button type="button" id="button1">Please Click!!!</button>
+    <div id="domTest">
+
+    </div>
+    <div id="picDiv">
+
+    </div>
+    <h3></h3>
+    <script>
+      var button1 = document.querySelector("#button1");
+      var div1 = document.querySelector("#domTest");
+      var img1 = document.querySelector("#picDiv");
+      var h31 = document.querySelector("h3");
+
+      var shap = ["https://cdn.creators.com/mugshots/ben-shapiro_thumb.jpg","https://www.dailywire.com/sites/default/files/styles/11medium/public/authors/ben-shapiro.jpg?itok=AbBYDFy_","https://moneyinc.com/wp-content/uploads/2018/09/Ben-Shapiro-750x429.jpg","https://i.kym-cdn.com/entries/icons/original/000/026/755/benshapirolasereyes.png"]
+
+      var abc = ["Okay,", "this", "is", "EPIC!"];
+      var a = 0;
+      var x = 0;
+
+      button1.addEventListener("click", function(){
+        x = x + 360;
+        img1.style.transform = 'rotateY(' + x + 'deg)';
+        if(a < abc.length){
+          div1.innerHTML = '<h2>' + abc[a] + '</h2>';
+          img1.innerHTML = '<img height="300px" src="' + shap[a] + '">';
+          a++;
+            if(a === abc.length){
+              h31.innerHTML = "Libtards Destroyed With<br><bold>FACTS AND LOGIC</bold><br>";
+            } else{
+              h31.innerHTML = "";
+            }
+        }else if(a === abc.length){
+          a = 0;
+          h31.innerHTML = "";
+          div1.innerHTML = '<h2>' + abc[a] + '</h2>';
+          img1.innerHTML = '<img height="300px" src="' + shap[a] + '">';
+          a++;
+        }
+      });
+    </script>
+  </body>
+</html>
